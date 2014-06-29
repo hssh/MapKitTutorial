@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -15,8 +15,34 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wYb-rq-ktv">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="3OO-6g-Lom"/>
+                                    <constraint firstAttribute="height" constant="44" id="Rlx-np-Hqh"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fXa-3T-yzQ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fXa-3T-yzQ" firstAttribute="top" secondItem="wYb-rq-ktv" secondAttribute="bottom" id="Icp-ps-V86"/>
+                            <constraint firstItem="fXa-3T-yzQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Qc4-g1-mrZ"/>
+                            <constraint firstAttribute="trailing" secondItem="fXa-3T-yzQ" secondAttribute="trailing" id="Z95-M2-Nmv"/>
+                            <constraint firstItem="wYb-rq-ktv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="fKt-oC-LBn"/>
+                            <constraint firstAttribute="trailing" secondItem="wYb-rq-ktv" secondAttribute="trailing" id="kr0-PI-jiB"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fXa-3T-yzQ" secondAttribute="bottom" id="s3F-dD-UO6"/>
+                            <constraint firstItem="wYb-rq-ktv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="sRE-9u-SeA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapSearchBar" destination="wYb-rq-ktv" id="3M4-eY-Fzt"/>
+                        <outlet property="mapView" destination="fXa-3T-yzQ" id="q7n-6V-geH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
